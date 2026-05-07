@@ -1,26 +1,18 @@
 'use client';
 
 import Link from 'next/link';
-import Button from './Button';
-import Image from 'next/image';
-
 
 
 type FooterProps = {
   footerText: string;
 
   socialLinks: { href: string; icon: JSX.Element }[];
-  imageSrc: string; // new prop for left-side image
 };
 
-const Footer = ({ footerText, socialLinks, imageSrc }: FooterProps) => {
+const Footer = ({ footerText, socialLinks}: FooterProps) => {
   return (
     <footer className="pt-20 px-4 md:px-2 relative z-10">
       <div className="flex flex-col md:flex-row gap-1 items-end">
-        {/* Left Column - Image */}
-          <div className="relative md:w-[35%] md:h-[300px] overflow-hidden rounded-xl">
-            <Image src={imageSrc} alt="Footer Visual" className="object-cover w-full h-full" />
-          </div>
 
         {/* Right Column - Text + Links */}
         <div className="flex flex-col md:flex-row gap-8 px-6 md:px-2 md:items-end justify-between md:h-[300px] md:w-[65%] bg-[#DAD6CD] rounded-xl p-10">
@@ -33,7 +25,6 @@ const Footer = ({ footerText, socialLinks, imageSrc }: FooterProps) => {
             </p>
           </div>
 
-            <Button text="Learn More" variant="primary" href="/" />
          </div>
 
           <div className="flex gap-2">

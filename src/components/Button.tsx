@@ -1,58 +1,62 @@
-"use client";
+import { motion } from "framer-motion";
+import clsx from "clsx";
 
-import { ButtonHTMLAttributes, AnchorHTMLAttributes } from "react";
-import Link from "next/link";
-import { cn } from "@/lib/utils";
-
-type ButtonVariant = "primary" | "secondary";
-
-type CommonProps = {
-  text: string;
-  variant?: ButtonVariant;
+type ButtonProps = {
+  children: React.ReactNode;
+  onClick?: () => void;
   className?: string;
+  variant?: "default" | "gradient";
 };
 
-type ButtonProps = CommonProps &
-  (
-    | ({ href: string } & AnchorHTMLAttributes<HTMLAnchorElement>)
-    | (ButtonHTMLAttributes<HTMLButtonElement> & { href?: undefined })
-  );
-
 export default function Button({
-  text,
-  variant = "primary",
+  children,
+  onClick,
   className,
-  href,
-  ...props
+  variant = "default",
 }: ButtonProps) {
-  const baseClasses =
-    "w-full md:w-fit px-6 py-2 rounded-full font-semibold transition-colors duration-200 text-center";
+  const baseStyles =
+    "px-10 py-3 rounded-full transition backdrop-blur-md";
 
-  const variants: Record<ButtonVariant, string> = {
-    primary: "bg-black text-white hover:bg-gray-900",
-    secondary: "bg-[#F5F4EF] text-black hover:bg-gray-200",
+  const variants = {
+    default: `
+      border border-[#1a2209] border-2 text-[#1a2209]
+      bg-transparent
+      hover:bg-[#1a2209] hover:text-[#C0F53D]
+      font-medium
+    `,
+    gradient: "", // handled separately
   };
 
-  const classes = cn(baseClasses, variants[variant], className);
-
-  if (href) {
+  // gradient version uses wrapper
+  if (variant === "gradient") {
     return (
-      <Link
-        href={href}
-        className={classes}
-        {...(props as AnchorHTMLAttributes<HTMLAnchorElement>)}
-      >
-        {text}
-      </Link>
+      <div className="inline-block p-[2px] rounded-full bg-gradient-to-r from-[#C0F53D] to-green-500">
+        <motion.button
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.2, duration: 0.6 }}
+          onClick={onClick}
+          className={clsx(
+            baseStyles,
+            "bg-[#000] text-[#fafff3] hover:bg-[#C0F53D] hover:text-[#1a2209]",
+            className
+          )}
+        >
+          {children}
+        </motion.button>
+      </div>
     );
-  }
+  }``
 
   return (
-    <button
-      className={classes}
-      {...(props as ButtonHTMLAttributes<HTMLButtonElement>)}
+    <motion.button
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ delay: 0.2, duration: 0.6 }}
+      onClick={onClick}
+      className={clsx(baseStyles, variants.default, className)}
     >
-      {text}
-    </button>
+      {children}
+    </motion.button>
   );
 }

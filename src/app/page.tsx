@@ -1,14 +1,17 @@
 "use client";
 
+import HeroVideo from '@/components/FullWidthVideo';
 import Hero from '../components/Hero';
 import useLenisScroll from '../hooks/useLenisScroll';
-import ScrollImageSections from '@/components/ScrollImageSection';
-import ScrollHero from '@/components/ScrollHero';
-import ScrollAnimation from '@/components/ScrollAnimation';
-import ProductShowcase from '@/components/ProjectShowcase';
-import Swiper from '@/components/Swiper';
-import HighlightText from '@/components/HighlightText';
-import ThreeColumnText from '@/components/ThreeColumnTextProps';
+import CurvedSection from '@/components/CurvedSection';
+import Circles from '@/components/Circles';
+import ShowCase from '@/components/ShowCase';
+import CaseStudies from '@/components/CaseStudies';
+import Articles from '@/components/Articles';
+import HoverParallaxList from '@/components/HoverParallaxList';
+import Testimonial from '@/components/Testimonial';
+import CTA from '@/components/CTA';
+import Alien from '@/components/Alien';
 
 export default function LandingPage() {
   const { progress } = useLenisScroll();
@@ -16,139 +19,70 @@ export default function LandingPage() {
   return (
      
       <main className="min-h-screen">
-        <Hero
-          backgroundVideo="/outdoorVideo.mp4"
-          title="Feel alive in every footstep"
-          backgroundImage="outDoorImage.png"
-        />
+      <Hero title="Feel alive in every footstep" />
 
-        <ScrollImageSections />
+      <CurvedSection />
 
-        <ScrollHero backgroundImage='/hikingSix.jpg' heading='Conquer new peaks' />
+      <HeroVideo src="/spaceVideo.mp4">
+       
+      </HeroVideo>
 
-        <ScrollAnimation heading='Mh500' />
+      <Circles />
 
-       <ProductShowcase
-  firstRowProducts={{
-    MH500: {
-      outfitImage: "/outfitTwo.webp",
-      outfitType: "Trail Jacket",
-      gender: "Male",
-      smallImage: "/JacketOne.webp",
-      color: "Green",
-      colorways: "3 colorways",
-    },
-    MH900: {
-      outfitImage: "/outfitOne.webp",
-      outfitType: "Raincoat",
-      gender: "Male",
-      smallImage: "/jacketThree.webp",
-      color: "Blue",
-      colorways: "2 colorways",
-    },
-  }}
-  secondRowProducts={{
-    MH500: {
-        outfitImage: "/outfitFour.webp",
+      <ShowCase />
 
-      outfitType: "Hiking Gear",
-      gender: "Woman",
-           smallImage: "/jacketFour.webp",
+      <CaseStudies />
 
-      color: "Beige",
-      colorways: "2 colorways",
-    },
-    MH900: {
-         outfitImage: "/outfitThree.webp",
+      <Articles
+        pretitle="Latest In"
+        title={
+          <>
+            <span className='font-light font-serif italic'>Digital</span> <br/> Advertising
 
-      outfitType: "Mountain Coat",
-      gender: "Woman",
-          smallImage: "/jacketTwo.webp",
-
-      color: "Red",
-      colorways: "3 colorways",
-    },
-  }}
-  firstRowBg="/rockyMountain.webp"
-  secondRowBg="/rockyMountainTwo.webp"
-/>
+          </>
+        }
+        buttonText="View Case Studies"
+        boxes={[
+          {
+            media: "/articleOne.jpg",
+            smallText: "Ecommerce Growth",
+            title: "Scaling Conversion Systems",
+          },
+          {
+            media: "/articleTwo.jpg",
+            smallText: "Paid Media",
+            title: "Performance Creative Testing",
+          },
+        ]}
+      />
 
 
-        <ScrollHero backgroundImage='/hikingSeven.jpg' heading='Step on up'/>
+      <HoverParallaxList />
 
-        <ScrollAnimation heading='MH500 Shoes' />
+      <Testimonial
+        heading="What our clients are"
+        highlight="saying."
+        company="GE VENTURES"
+        quote="These guys are the real deal. Effective, efficient, and a pleasure to work with. Dan quickly understood and was able to help us better articulate the nuances of our business."
+        name="Jordan Feder"
+        role="VC at GE Ventures"
+        avatar="/avatar.jpg"
+      />
 
-        <ProductShowcase
-  firstRowProducts={{
-    MH500: {
-      outfitImage: "/hikingShoesTwo.webp",
-      outfitType: "Hiking Shoes",
-      gender: "Unisex",
-      smallImage: "/hikingShoesOne.webp",
-      color: "Green",
-      colorways: "1 colorway",
-    }
-  }}
-  secondRowProducts={{
-    MH500: {
-        outfitImage: "/hikingShoesFour.webp",
+      <CTA
+        title={
+          <>
+            Let us help your company <br />
+            accelerate{" "}
+            <span className="italic font-serif font-light">
+              years ahead.
+            </span>
+          </>
+        }
+      />
 
-      outfitType: "Hiking Shoes",
-      gender: "Unisex",
-           smallImage: "/hikingShoesThree.webp",
-
-      color: "Orange",
-      colorways: "1 colorway",
-    }
- 
-  }}
-  firstRowBg="/hikingShoesBgOne.jpg"
-  secondRowBg="/hikingBgTwo.webp"
-/>
-      
-        <ScrollHero backgroundImage='/outdoorBG.jpg' heading='Outdoor spirit'/>
-
-           <ProductShowcase
-  firstRowProducts={{
-    "25L": {
-      outfitImage: "/backpackTwo.webp",
-      outfitType: "Red Backpack",
-      gender: "Unisex",
-      smallImage: "/redBackpack.webp",
-      color: "Red",
-      colorways: "1 colorway",
-    },
-     "38L": {
-      outfitImage: "/backpackOne.webp",
-      outfitType: "Yellow Backpack",
-      gender: "Unisex",
-      smallImage: "/yellowBackpack.webp",
-      color: "Yellow",
-      colorways: "1 colorway",
-    }
-  }}
-  firstRowBg="/hikingShoesBgOne.jpg"
-/>
-
-<Swiper
-  slides={[
-    { heading: "Unleash your next adventure", text: "Explore our full collection of hiking gear and accessories—everything you need for your next journey is here.", buttonText: "See full collection", image: "/swiperImageOne.webp" },
-    { image: "/swiperImageTwo.webp" },
-    { image: "/swiperImageThree.webp" },
-    { image: "/swiperImageFour.webp" },
-  ]}
-/>
-
-
-<HighlightText text="Crafted in the heart of the French Alps. Here at Quechua, Decathlon's mountain sports specialist, we’ve been designing innovative performance gear for over 25 years." className="text-7xl font-bold" />
-
-<ThreeColumnText
-  leftText="SINCE 1997"
-  centerText="Inspired by the rugged beauty of the French Alps, each piece in this collection is crafted with the spirit of adventure in mind. We combine our deep understanding of the mountains with cutting-edge technology to create gear that endures even the toughest terrains. Every product is designed for you to get the most out of your outdoor experiences, with every detail carefully engineered to support your hiking or outdoor escapades."
-  rightText={`DECATHLON MOUNTAIN LAB\n45.91616° N, 6.69121° E`}
-/>
-
-
+      <Alien />
+    
       </main>
   );
 }

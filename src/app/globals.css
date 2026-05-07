@@ -6,7 +6,7 @@
 /* Custom Variables */
 :root {
   /* Fonts */
-  --main: "Syne", sans-serif;
+  --main: "Instrument Serif", sans-serif;
 }
 
 /* Normalize + Antialias */
@@ -20,13 +20,13 @@
 
 ::-moz-selection {
   /* Code for Firefox */
-  color: #000;
-  background: #f5f4ef;
+  color: #fafff3;
+  background: #1a2209;
 }
 
 ::selection {
-  color: #000;
-  background: #f5f4ef;
+  color: #fafff3;
+  background: #1a2209;
 }
 
 /* Font Application */
@@ -38,10 +38,10 @@ body {
 /* Scrollbar (WebKit) */
 body::-webkit-scrollbar {
   width: 0.5rem;
-  background-color: #f5f4ef;
+  background-color: #fafff3;
 }
 body::-webkit-scrollbar-thumb {
-  background-color: rgba(0, 0, 0, 0.3);
+  background-color: #1a2209;
   border-radius: 3rem;
 }
 
@@ -63,4 +63,17 @@ h5,
 h6 {
   font-family: var(--main);
   color: var(--primary);
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  animation: marquee linear infinite;
 }

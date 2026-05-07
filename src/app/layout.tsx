@@ -1,21 +1,22 @@
 import NavMenu from '@/components/nav-bar/NavMenu'
 import './globals.css'
-import { Syne } from 'next/font/google'
-import Footer from '@/components/Footer'
+import { Instrument_Serif, Inter } from 'next/font/google'
 import { Facebook, Twitter, Instagram, Linkedin } from 'lucide-react';
 
-const syne = Syne({ subsets: ['latin'], weight: ['400', '700'] })
-
+const instrumentSerif = Instrument_Serif({
+  subsets: ['latin'],
+  weight: '400'
+})
+const inter = Inter({ subsets: ['latin'] })
 
 export const metadata = {
-  title: "Immersive Sound | Simplified",
+  title: "Alien Marketing",
   description:
-    "Our most recent breakthrough in audio devices blends exceptional audio performance with unparalleled toughness and elegance.",
+    "Marketing agency specializing in digital strategies, creative campaigns, and innovative solutions to help businesses thrive in the digital landscape.",
 };
 
-
 const footerData = {
-  footerText: 'Feel alive in every footstep',
+  footerText: 'Marketing made easy.',
 
   socialLinks: [
     { href: '#', icon: <Facebook size={18} /> },
@@ -26,16 +27,14 @@ const footerData = {
 };
 
 
-
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={`overflow-x-hidden bg-[#F5F4EF] ${syne.className} `}
+        className={`overflow-x-hidden bg-[#0a0d04] ${instrumentSerif.className}, ${inter.className}`}
       >
         <NavMenu />
         {children}
-        <Footer {...footerData}  imageSrc="/footerBg.jpg" />
       </body>
     </html>
   )

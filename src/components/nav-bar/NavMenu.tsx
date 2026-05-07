@@ -1,19 +1,8 @@
 "use client";
 
 import Link from "next/link";
-import Image from "next/image";
 import React, { useState, useEffect, useRef } from "react";
-import { ChevronDown } from "lucide-react";
-import OverviewDropdown from "./OverviewDropdown";
-import LanguageDropdown from "./LanguageDropdown";
-
-const overviewItems = [
-  { label: "Car Models", img: "/images/car1.jpg" },
-  { label: "Luxury Packages", img: "/images/car2.jpg" },
-  { label: "Rental Offers", img: "/images/car3.jpg" },
-];
-
-const languages = ["EN", "FR", "DE"];
+import CTAFormToggle from "./CTAFormToggle";
 
 const NavMenu = () => {
   const [showNav, setShowNav] = useState(true);
@@ -21,19 +10,21 @@ const NavMenu = () => {
 
   const navRef = useRef<HTMLDivElement>(null);
 
-  // Hide/show nav on scroll
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
+
       if (currentScrollY < 50) {
         setShowNav(true);
       } else if (currentScrollY > lastScrollY) {
-        setShowNav(false); // scrolling down
+        setShowNav(false);
       } else {
-        setShowNav(true); // scrolling up
+        setShowNav(true);
       }
+
       setLastScrollY(currentScrollY);
     };
+
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, [lastScrollY]);
@@ -49,16 +40,34 @@ const NavMenu = () => {
           : "bg-transparent"
       }`}
     >
-      <div className=" px-4 md:px-2 py-6 flex items-center justify-between">
+      <div className="px-6 py-6 flex items-center justify-between relative">
 
-      <OverviewDropdown />
-
-        {/* CENTER: Logo */}
-        <Link href="/" className="text-2xl md:text-3xl text-white font-bold">
-          Decathlon
+        {/* LEFT: Logo */}
+        <Link href="/" className="text-2xl md:text-2xl text-white font-bold p-2 border border-1">
+          ALIEN MARKETING&#x2122;
         </Link>
 
-        <LanguageDropdown />
+        {/* CENTER: Nav Links */}
+        <div className="absolute left-1/2 -translate-x-1/2 hidden md:flex items-center gap-10 text-white">
+          <Link href="#" className="hover:text-[#C0F53D] transition">
+            Services
+          </Link>
+          <Link href="#" className="hover:text-[#C0F53D] transition">
+            Work
+          </Link>
+          <Link href="#" className="hover:text-[#C0F53D] transition">
+            About
+          </Link>
+          <Link href="#" className="hover:text-[#C0F53D] transition">
+            Blog
+          </Link>
+          <Link href="#" className="hover:text-[#C0F53D] transition">
+            Careers
+          </Link>
+        </div>
+
+        {/* RIGHT: CTA */}
+        <CTAFormToggle />
       </div>
     </div>
   );
