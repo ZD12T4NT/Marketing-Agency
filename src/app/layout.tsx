@@ -2,6 +2,7 @@ import NavMenu from '@/components/nav-bar/NavMenu'
 import './globals.css'
 import { Instrument_Serif, Inter } from 'next/font/google'
 import { Facebook, Twitter, Instagram, Linkedin } from 'lucide-react';
+import Footer from '@/components/Footer';
 
 const instrumentSerif = Instrument_Serif({
   subsets: ['latin'],
@@ -35,6 +36,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       >
         <NavMenu />
         {children}
+        <Footer />
       </body>
     </html>
   )

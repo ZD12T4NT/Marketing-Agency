@@ -1,6 +1,6 @@
 "use client";
 
-import HeroVideo from '@/components/FullWidthVideo';
+// import HeroVideo from '@/components/FullWidthVideo';
 import Hero from '../components/Hero';
 import useLenisScroll from '../hooks/useLenisScroll';
 import CurvedSection from '@/components/CurvedSection';
@@ -11,7 +11,6 @@ import Articles from '@/components/Articles';
 import HoverParallaxList from '@/components/HoverParallaxList';
 import Testimonial from '@/components/Testimonial';
 import CTA from '@/components/CTA';
-import Alien from '@/components/Alien';
 
 export default function LandingPage() {
   const { progress } = useLenisScroll();
@@ -23,9 +22,7 @@ export default function LandingPage() {
 
       <CurvedSection />
 
-      <HeroVideo src="/spaceVideo.mp4">
-       
-      </HeroVideo>
+      {/* <HeroVideo src="/spaceVideo.mp4" /> */}
 
       <Circles />
 
@@ -81,8 +78,6 @@ export default function LandingPage() {
         }
       />
 
-      <Alien />
-    
       </main>
   );
 }
