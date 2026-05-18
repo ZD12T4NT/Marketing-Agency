@@ -27,7 +27,7 @@ export default function HeroVideo({
       <div className="absolute inset-0 bg-black/40" />
 
       {/* Content */}
-      <div className="relative z-10 flex items-center justify-center h-full text-white text-center px-4">
+      <div className="relative z-10 flex items-center justify-center h-full text-[#fafff3] text-center px-4">
         {children}
       </div>
     </div>

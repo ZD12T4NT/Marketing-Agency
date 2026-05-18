@@ -40,7 +40,7 @@ const Articles: React.FC<ArticlesProps> = ({
         <motion.div
           initial={{ opacity: 0, y: 10 }}
           whileInView={{ opacity: 1, y: 0 }}
-          className="text-sm uppercase tracking-widest text-white/60 mb-3"
+          className="text-sm uppercase tracking-widest text-[#fafff3]/60 mb-3"
         >
           {pretitle}
         </motion.div>
@@ -93,10 +93,10 @@ const Articles: React.FC<ArticlesProps> = ({
 
               {/* TEXT */}
               <div>
-                <div className="text-sm text-white/60">
+                <div className="text-sm text-[#fafff3]/60">
                   {box.smallText}
                 </div>
-                <div className="text-xl text-white font-medium mt-1">
+                <div className="text-xl text-[#fafff3] font-medium mt-1">
                   {box.title}
                 </div>
               </div>

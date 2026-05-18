@@ -4,6 +4,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import Button from "./Button";
 
+
 type HeroProps = {
   title?: string;
 };
@@ -56,6 +57,7 @@ const Hero: React.FC<HeroProps> = () => {
 
             <div className="relative text-5xl md:text-7xl lg:text-8xl italic font-serif font-light ">
               New
+
             </div>
 
             <div className="text-5xl md:text-7xl lg:text-8xl font-medium">

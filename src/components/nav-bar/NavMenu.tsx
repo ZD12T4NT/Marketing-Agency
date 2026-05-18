@@ -4,6 +4,14 @@ import Link from "next/link";
 import React, { useState, useEffect, useRef } from "react";
 import CTAFormToggle from "./CTAFormToggle";
 
+const navLinks = [
+  { label: "Services", href: "#" },
+  { label: "Work", href: "#" },
+  { label: "About", href: "#" },
+  { label: "Blog", href: "#" },
+  { label: "Careers", href: "#" },
+];
+
 const NavMenu = () => {
   const [showNav, setShowNav] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
@@ -26,6 +34,7 @@ const NavMenu = () => {
     };
 
     window.addEventListener("scroll", handleScroll);
+
     return () => window.removeEventListener("scroll", handleScroll);
   }, [lastScrollY]);
 
@@ -43,27 +52,35 @@ const NavMenu = () => {
       <div className="px-6 py-6 flex items-center justify-between relative">
 
         {/* LEFT: Logo */}
-        <Link href="/" className="text-2xl md:text-2xl text-white font-bold p-2 border border-1">
+        <Link
+          href="/"
+          className="text-2xl md:text-2xl text-[#fafff3] font-bold p-2 border border-white/20 hover:bg-[#fafff3] hover:text-black transition-all"
+        >
           ALIEN MARKETING&#x2122;
         </Link>
 
         {/* CENTER: Nav Links */}
-        <div className="absolute left-1/2 -translate-x-1/2 hidden md:flex items-center gap-10 text-white">
-          <Link href="#" className="hover:text-[#C0F53D] transition">
-            Services
-          </Link>
-          <Link href="#" className="hover:text-[#C0F53D] transition">
-            Work
-          </Link>
-          <Link href="#" className="hover:text-[#C0F53D] transition">
-            About
-          </Link>
-          <Link href="#" className="hover:text-[#C0F53D] transition">
-            Blog
-          </Link>
-          <Link href="#" className="hover:text-[#C0F53D] transition">
-            Careers
-          </Link>
+        <div className="absolute left-1/2 -translate-x-1/2 hidden md:flex items-center gap-10">
+          {navLinks.map((link) => (
+            <Link
+              key={link.label}
+              href={link.href}
+              className="group inline-flex overflow-hidden text-[#fafff3]/80 transition-colors hover:text-[#C0F53D]"
+            >
+              <span className="relative">
+                {link.label}
+
+                <span
+                  className="
+                    absolute bottom-0 left-0 
+                    h-px w-0 bg-[#C0F53D] 
+                    transition-all duration-300 
+                    group-hover:w-full
+                  "
+                />
+              </span>
+            </Link>
+          ))}
         </div>
 
         {/* RIGHT: CTA */}

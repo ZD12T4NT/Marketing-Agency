@@ -29,24 +29,33 @@ export default function Button({
 
   // gradient version uses wrapper
   if (variant === "gradient") {
-    return (
-      <div className="inline-block p-[2px] rounded-full bg-gradient-to-r from-[#C0F53D] to-green-500">
-        <motion.button
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.2, duration: 0.6 }}
+  return (
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.2, duration: 0.6 }}
+        className="
+          group
+          inline-block
+          p-[2px]
+          rounded-full
+          bg-gradient-to-r
+          from-[#C0F53D]
+          to-green-500
+          hover:from-[#C0F53D]
+          hover:to-[#C0F53D]
+          transition-all
+          duration-300
+        "
+      >
+        <button
           onClick={onClick}
-          className={clsx(
-            baseStyles,
-            "bg-[#000] text-[#fafff3] hover:bg-[#C0F53D] hover:text-[#1a2209]",
-            className
-          )}
-        >
+          className={clsx(baseStyles,"bg-[#000] text-[#fafff3] group-hover:bg-[#C0F53D] group-hover:text-[#1a2209] transition-all duration-300", className)}>
           {children}
-        </motion.button>
-      </div>
-    );
-  }``
+        </button>
+      </motion.div>
+        );
+      }
 
   return (
     <motion.button

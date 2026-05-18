@@ -18,7 +18,7 @@ export default function CTA({
   onClick,
 }: CTAProps) {
   return (
-    <section className="w-full h-[80vh] ">
+    <section className="w-full h-[70vh] ">
 
       {/* MAIN CTA */}
       <div className="h-full relative bg-[#C0F53D] py-20 px-6 text-center">

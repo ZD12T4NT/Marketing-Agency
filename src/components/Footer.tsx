@@ -6,6 +6,8 @@ import { ArrowRight } from "lucide-react";
 import { useRef } from "react";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
+import { instrumentSerif, inter } from "@/lib/fonts";
+import AlienHead from "./AlienHead";
 
 gsap.registerPlugin(useGSAP);
 
@@ -36,7 +38,7 @@ export default function Footer() {
   return (
     <footer
       ref={footerRef}
-      className="relative overflow-hidden rounded-t-[2rem] bg-black text-white"
+      className="relative overflow-hidden rounded-t-[2rem] bg-black text-[#fafff3]"
     >
       {/* Background Glow */}
       <div className="absolute inset-0">
@@ -54,8 +56,8 @@ export default function Footer() {
           viewport={{ once: true }}
           className="footer-fade mb-16 flex justify-center"
         >
-          <div className="flex h-14 w-14 items-center justify-center rounded-full border border-lime-300/40 bg-lime-300 text-black shadow-[0_0_40px_rgba(163,230,53,0.35)]">
-            👽
+          <div className="flex h-14 w-14 items-center justify-center rounded-full bg-[#C0F53D]">
+            <AlienHead className="w-8 h-8" />
           </div>
         </motion.div>
 
@@ -63,28 +65,31 @@ export default function Footer() {
         <div className="grid gap-16 md:grid-cols-[1.4fr_0.7fr_0.7fr]">
           {/* Left */}
           <div className="footer-fade">
-            <div className="mb-8 inline-block border border-white/70 px-4 py-2 text-sm tracking-widest">
-              ALIEN MARKETING
-            </div>
+            <Link href="/" className="mb-8 inline-block text-2xl md:text-2xl text-[#fafff3] font-bold p-2 border border-1 hover:bg-[#fafff3] hover:text-black transition-all">
+              ALIEN MARKETING&#x2122;
+            </Link>
 
-            <h2 className="max-w-xl text-4xl font-light leading-tight tracking-tight text-white md:text-5xl">
-              Sign up to harness the power of Adspace.
+            <h2 className={`${inter.className} max-w-xl text-3xl font-light leading-tight tracking-tight text-[#fafff3] md:text-4xl`}>
+              <span className={`${instrumentSerif.className} italic font-light`}>
+                Sign up
+              </span>{" "}
+              to harness the power of Alien Marketing.
             </h2>
 
             {/* Input */}
             <div className="mt-10 flex max-w-md items-center gap-3">
-              <div className="flex-1 border border-white/40 bg-white/5 backdrop-blur">
+              <div className="flex-1 border border-[#fafff3]/40 bg-[#fafff3]/5 backdrop-blur">
                 <input
                   type="email"
                   placeholder="Email"
-                  className="h-14 w-full bg-transparent px-5 text-sm text-white outline-none placeholder:text-white/40"
+                  className="h-14 w-full bg-transparent px-5 text-sm text-[#fafff3] outline-none placeholder:text-[#fafff3]/40"
                 />
               </div>
 
               <motion.button
                 whileHover={{ x: 4 }}
                 whileTap={{ scale: 0.95 }}
-                className="flex h-14 w-14 items-center justify-center border border-white/40 bg-white/5 backdrop-blur transition-colors hover:bg-lime-300 hover:text-black"
+                className="flex h-14 w-14 items-center justify-center border border-[#fafff3]/40 bg-[#fafff3]/5 backdrop-blur transition-colors hover:bg-lime-300 hover:text-black"
               >
                 <ArrowRight size={18} />
               </motion.button>
@@ -93,7 +98,7 @@ export default function Footer() {
 
           {/* Services */}
           <div className="footer-fade">
-            <h3 className="mb-5 text-sm font-medium uppercase tracking-widest text-white/50">
+            <h3 className="mb-5 text-sm font-medium uppercase tracking-widest text-[#fafff3]/50">
               Services
             </h3>
 
@@ -102,7 +107,7 @@ export default function Footer() {
                 <li key={item}>
                   <Link
                     href="/"
-                    className="group inline-flex overflow-hidden text-white/80 transition-colors hover:text-lime-300"
+                    className="group inline-flex overflow-hidden text-[#fafff3]/80 transition-colors hover:text-lime-300"
                   >
                     <span className="relative">
                       {item}
@@ -116,7 +121,7 @@ export default function Footer() {
 
           {/* Company */}
           <div className="footer-fade">
-            <h3 className="mb-5 text-sm font-medium uppercase tracking-widest text-white/50">
+            <h3 className="mb-5 text-sm font-medium uppercase tracking-widest text-[#fafff3]/50">
               Company
             </h3>
 
@@ -125,7 +130,7 @@ export default function Footer() {
                 <li key={item}>
                   <Link
                     href="/"
-                    className="group inline-flex overflow-hidden text-white/80 transition-colors hover:text-lime-300"
+                    className="group inline-flex overflow-hidden text-[#fafff3]/80 transition-colors hover:text-lime-300"
                   >
                     <span className="relative">
                       {item}
@@ -139,8 +144,8 @@ export default function Footer() {
         </div>
 
         {/* Bottom */}
-        <div className="footer-fade mt-24 flex flex-col items-center justify-between gap-6 border-t border-white/10 pt-8 text-sm text-white/40 md:flex-row">
-          <p>©2025 ADSPACE®</p>
+        <div className="footer-fade mt-24 flex flex-col items-center justify-center gap-6 border-t border-[#fafff3]/10 pt-8 text-sm text-[#fafff3]/40">
+          <p>©2025 ALIEN MARKETING&#x2122;</p>
 
           <motion.div
             animate={{ rotate: 360 }}

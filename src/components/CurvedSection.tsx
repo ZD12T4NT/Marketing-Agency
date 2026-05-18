@@ -1,6 +1,6 @@
 export default function CurvedSection() {
   return (
-    <section className="relative z-20 -mt-20 bg-[#0a0d04] text-white">
+    <section className="relative z-20 -mt-20 bg-[#0a0d04] text-[#fafff3]">
       {/* Curve */}
       <div className="absolute top-0 left-0 w-full overflow-hidden leading-none">
        

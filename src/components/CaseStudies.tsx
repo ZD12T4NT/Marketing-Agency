@@ -97,7 +97,7 @@ export default function CaseStudies() {
                     className={`relative h-[350px] rounded-2xl overflow-hidden cursor-pointer border ${
                         isActive
                         ? "border-lime-400"
-                        : "border-white/10"
+                        : "border-[#fafff3]/10"
                     }`}
                     >
                     {/* IMAGE (always present if exists) */}
@@ -110,13 +110,13 @@ export default function CaseStudies() {
 
                     {/* DARK OVERLAY (for readability) */}
                     {isActive && (
-                    <div className="absolute inset-0 bg-black/80 backdrop-blur-md border border-white/10" />
+                    <div className="absolute inset-0 bg-black/80 backdrop-blur-md border border-[#fafff3]/10" />
                     )}
 
                     {/* ACTIVE CONTENT (ON TOP OF IMAGE) */}
                     {isActive && (
                         <motion.div
-                        className="absolute inset-0 p-5 flex flex-col justify-between text-white z-10"
+                        className="absolute inset-0 p-5 flex flex-col justify-between text-[#fafff3] z-10"
                         initial={false}
                         animate={{
                             opacity: isActive ? 1 : 0,
@@ -130,7 +130,7 @@ export default function CaseStudies() {
                             </div>
 
                             {item.description && (
-                            <p className="text-sm text-white/70">
+                            <p className="text-sm text-[#fafff3]/70">
                                 {item.description}
                             </p>
                             )}
@@ -143,7 +143,7 @@ export default function CaseStudies() {
                                 <div className="text-lime-400 font-semibold">
                                     {s.value}
                                 </div>
-                                <div className="text-white/60">{s.label}</div>
+                                <div className="text-[#fafff3]/60">{s.label}</div>
                                 </div>
                             ))}
                             </div>
@@ -157,7 +157,7 @@ export default function CaseStudies() {
 
                     {/* COLLAPSED LABEL */}
                     {!isActive && (
-                        <div className="absolute bottom-3 left-3 text-white text-sm flex items-center gap-2 z-10">
+                        <div className="absolute bottom-3 left-3 text-[#fafff3] text-sm flex items-center gap-2 z-10">
                         <span className="w-5 h-5 rounded-full border flex items-center justify-center">
                             +
                         </span>
@@ -174,7 +174,7 @@ export default function CaseStudies() {
             <button
                 onClick={() => setActive((prev) => Math.max(prev - 1, 0))}
                 className="absolute -left-14 top-1/2 -translate-y-1/2 
-                w-10 h-10 rounded-full bg-black/50 text-white backdrop-blur-md"
+                w-10 h-10 rounded-full bg-black/50 text-[#fafff3] backdrop-blur-md"
             >
                 ←
             </button>
@@ -185,7 +185,7 @@ export default function CaseStudies() {
                 setActive((prev) => Math.min(prev + 1, data.length - 1))
                 }
                 className="absolute -right-14 top-1/2 -translate-y-1/2 
-                w-10 h-10 rounded-full bg-black/50 text-white backdrop-blur-md"
+                w-10 h-10 rounded-full bg-black/50 text-[#fafff3] backdrop-blur-md"
             >
                 →
             </button>
@@ -195,7 +195,7 @@ export default function CaseStudies() {
         onClick={() =>
           setActive((prev) => Math.min(prev + 1, data.length - 1))
         }
-        className="absolute right-0 w-10 h-10 rounded-full bg-black/50 text-white"
+        className="absolute right-0 w-10 h-10 rounded-full bg-black/50 text-[#fafff3]"
       >
         →
       </button>
