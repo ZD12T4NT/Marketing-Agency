@@ -42,7 +42,7 @@ export default function Footer() {
     >
       {/* Background Glow */}
       <div className="absolute inset-0">
-        <div className="absolute bottom-[-10rem] left-1/2 h-[24rem] w-[80rem] -translate-x-1/2 rounded-full bg-lime-400/40 blur-[140px]" />
+        <div className="absolute bottom-[-10rem] left-1/2 h-[24rem] w-[80rem] -translate-x-1/2 rounded-full bg-[#C0F53D]/40 blur-[140px]" />
 
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(163,230,53,0.08),transparent_40%)]" />
       </div>
@@ -89,7 +89,7 @@ export default function Footer() {
               <motion.button
                 whileHover={{ x: 4 }}
                 whileTap={{ scale: 0.95 }}
-                className="flex h-14 w-14 items-center justify-center border border-[#fafff3]/40 bg-[#fafff3]/5 backdrop-blur transition-colors hover:bg-lime-300 hover:text-black"
+                className="flex h-14 w-14 items-center justify-center border border-[#fafff3]/40 bg-[#fafff3]/5 backdrop-blur transition-colors hover:bg-[#C0F53D] hover:text-black"
               >
                 <ArrowRight size={18} />
               </motion.button>
@@ -107,11 +107,11 @@ export default function Footer() {
                 <li key={item}>
                   <Link
                     href="/"
-                    className="group inline-flex overflow-hidden text-[#fafff3]/80 transition-colors hover:text-lime-300"
+                    className="group inline-flex overflow-hidden text-[#fafff3]/80 transition-colors hover:text-[#C0F53D]"
                   >
                     <span className="relative">
                       {item}
-                      <span className="absolute bottom-0 left-0 h-px w-0 bg-lime-300 transition-all duration-300 group-hover:w-full" />
+                      <span className="absolute bottom-0 left-0 h-px w-0 bg-[#C0F53D] transition-all duration-300 group-hover:w-full" />
                     </span>
                   </Link>
                 </li>
@@ -130,11 +130,11 @@ export default function Footer() {
                 <li key={item}>
                   <Link
                     href="/"
-                    className="group inline-flex overflow-hidden text-[#fafff3]/80 transition-colors hover:text-lime-300"
+                    className="group inline-flex overflow-hidden text-[#fafff3]/80 transition-colors hover:text-[#C0F53D]"
                   >
                     <span className="relative">
                       {item}
-                      <span className="absolute bottom-0 left-0 h-px w-0 bg-lime-300 transition-all duration-300 group-hover:w-full" />
+                      <span className="absolute bottom-0 left-0 h-px w-0 bg-[#C0F53D] transition-all duration-300 group-hover:w-full" />
                     </span>
                   </Link>
                 </li>

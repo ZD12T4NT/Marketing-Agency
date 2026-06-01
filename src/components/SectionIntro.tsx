@@ -34,7 +34,7 @@ const SectionIntro: React.FC<SectionIntroProps> = ({
         transition={{ duration: 0.6 }}
         viewport={{ once: true }}
         style={{ color: textColor }}
-        className="leading-[0.95] tracking-tight text-4xl md:text-8xl font-medium"
+        className="leading-[0.95] tracking-tight text-4xl md:text-8xl font-normal"
       >
         {title}
       </motion.div>

@@ -11,6 +11,7 @@ import Articles from '@/components/Articles';
 import HoverParallaxList from '@/components/HoverParallaxList';
 import Testimonial from '@/components/Testimonial';
 import CTA from '@/components/CTA';
+import { instrumentSerif } from '@/lib/fonts';
 
 export default function LandingPage() {
   const { progress } = useLenisScroll();
@@ -71,7 +72,7 @@ export default function LandingPage() {
           <>
             Let us help your company <br />
             accelerate{" "}
-            <span className="italic font-serif font-light">
+            <span className={`${instrumentSerif.className} italic font-light`}>
               years ahead.
             </span>
           </>

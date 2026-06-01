@@ -1,4 +1,5 @@
 "use client";
+import { instrumentSerif, inter } from "@/lib/fonts";
 
 import {
   motion,
@@ -53,7 +54,7 @@ export default function HoverParallaxList() {
         title={
           <>
             What we do <br />
-            <span className="italic font-serif font-light">best.</span>
+            <span className={`${instrumentSerif.className} italic font-light`}>best.</span>
           </>
         }
       />
@@ -86,7 +87,7 @@ export default function HoverParallaxList() {
                     <div className="text-xl text-[#1a2209] mb-1 mr-4 group-hover:text-[#C0F53D]">
                       0{i + 1}
                     </div>
-                    <div className="text-3xl font-medium group-hover:text-[#C0F53D] transition">
+                    <div className="text-3xl text-[#1a2209] font-medium group-hover:text-[#C0F53D] transition">
                       {item.title}
                     </div>
                   </div>

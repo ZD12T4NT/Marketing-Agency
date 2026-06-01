@@ -1,5 +1,6 @@
 "use client";
 
+import { instrumentSerif } from "@/lib/fonts";
 import { motion } from "framer-motion";
 
 type TestimonialProps = {
@@ -36,7 +37,7 @@ export default function Testimonial({
         >
           {heading}{" "}
           {highlight && (
-            <span className="italic font-serif font-light">
+            <span className={`${instrumentSerif.className} italic font-light`}>
               {highlight}
             </span>
           )}
@@ -57,7 +58,7 @@ export default function Testimonial({
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.2, duration: 0.6 }}
-          className="mt-6 text-lg md:text-2xl font-serif italic leading-relaxed text-[#fafff3]/90"
+          className={`${instrumentSerif.className} mt-6 text-lg md:text-3xl italic leading-relaxed text-[#fafff3]/90`}
         >
           “{quote}”
         </motion.p>

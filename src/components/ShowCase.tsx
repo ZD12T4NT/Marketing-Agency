@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { instrumentSerif, inter } from "@/lib/fonts";
 import Button from "./Button";
 import Marquee from "./Marquee";
 
@@ -40,16 +41,16 @@ export default function ShowCase() {
       </motion.div>
 
       {/* CENTER CONTENT */}
-      <div className="relative z-10 text-center text-[#fafff3] px-6">
+      <div className="relative z-10 text-center text-[#fafff3] px-6 translate-y-44">
         
         <p className="text-xs tracking-[0.3em] uppercase opacity-60 mb-4">
           To Infinity and Beyond
         </p>
 
-        <h1 className="mb-9 text-4xl md:text-8xl font-light leading-tight">
+        <h1 className={`${inter.className} mb-9 text-4xl md:text-8xl font-normal leading-none tracking-tighter`}>
           Next Level
           <br />
-          <span className="italic font-serif font-light md:text-7xl">Results</span>
+          <span className={`font-serif md:text-8xl italic tracking-normal ${instrumentSerif.className}`}>Results</span>
         </h1>
 
         {/* CTA */}

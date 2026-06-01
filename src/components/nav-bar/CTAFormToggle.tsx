@@ -43,8 +43,8 @@ export default function CTAFormToggle() {
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 0, scale: 0.95 }}
-              className="absolute right-0 mt-4 w-[320px] rounded-2xl 
-              bg-lime-400 text-black p-5 shadow-xl"
+              className="absolute right-0 w-[320px] rounded-2xl 
+              bg-[#C0F53D] text-black p-5 shadow-xl"
             >
               {/* Close */}
               <button
@@ -55,38 +55,51 @@ export default function CTAFormToggle() {
               </button>
 
               {/* Content */}
-              <h3 className="text-xl font-semibold mb-1">Get Started</h3>
+              <h3 className="text-2xl md:text-4xl font-semibold mb-1 md:pr-24">Get Started</h3>
               <p className="text-sm mb-4">
                 Get your free marketing plan.
               </p>
 
               {/* Form */}
-              <form className="space-y-5">
-                <input
+              <form className="space-y-5 ">
+                <div>
+                  <label htmlFor="name">Name</label>
+                  <input
                   type="text"
                   placeholder="Name"
                   className="w-full px-3 py-2 rounded-md bg-black/10 placeholder-black/60 outline-none"
                 />
+                </div>
+               <div>
+                 <label htmlFor="email">Email Address</label>
                 <input
                   type="email"
                   placeholder="Email Address"
                   className="w-full px-3 py-2 rounded-md bg-black/10 placeholder-black/60 outline-none"
                 />
-                <input
+               </div>
+
+               <div>
+                <label htmlFor="company">Company Name</label>
+                 <input
                   type="text"
                   placeholder="Company Name"
                   className="w-full px-3 py-2 rounded-md bg-black/10 placeholder-black/60 outline-none"
                 />
-                <input
+               </div>
+               <div>
+                <label htmlFor="budget">Marketing Budget</label>
+                 <input
                   type="text"
                   placeholder="Marketing Budget"
                   className="w-full px-3 py-2 rounded-md bg-black/10 placeholder-black/60 outline-none"
                 />
+               </div>
 
                 <button
                   type="submit"
                   className="w-full mt-2 py-2 rounded-full border border-black 
-                  hover:bg-black hover:text-lime-400 transition"
+                  hover:bg-black hover:text-[#C0F53D] transition"
                 >
                   Submit →
                 </button>

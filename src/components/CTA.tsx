@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import Button from "./Button";
 import OrbitBadge from "./OrbitBadge";
+import { inter } from "@/lib/fonts";
 
 type CTAProps = {
   eyebrow?: string;
@@ -47,7 +48,7 @@ export default function CTA({
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.1, duration: 0.6 }}
-            className="text-3xl md:text-6xl font-medium leading-tight text-[#1a2209]"
+            className={`${inter.className} text-3xl md:text-5xl font-medium leading-tight text-[#1a2209]`}
           >
             {title}
           </motion.h2>

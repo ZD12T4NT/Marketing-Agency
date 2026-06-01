@@ -15,7 +15,7 @@ export default function Button({
   variant = "default",
 }: ButtonProps) {
   const baseStyles =
-    "px-10 py-3 rounded-full transition backdrop-blur-md";
+    "px-9 py-3 rounded-full transition backdrop-blur-md";
 
   const variants = {
     default: `
@@ -27,35 +27,32 @@ export default function Button({
     gradient: "", // handled separately
   };
 
-  // gradient version uses wrapper
-  if (variant === "gradient") {
-  return (
+    // gradient version uses wrapper
+    if (variant === "gradient") {
+    return (
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.2, duration: 0.6 }}
-        className="
-          group
-          inline-block
-          p-[2px]
-          rounded-full
-          bg-gradient-to-r
-          from-[#C0F53D]
-          to-green-500
-          hover:from-[#C0F53D]
-          hover:to-[#C0F53D]
-          transition-all
-          duration-300
-        "
+        className="group relative inline-block rounded-full p-[px]"
       >
+        {/* animated border */}
+        <div className="absolute inset-0 rounded-full bg-[conic-gradient(from_0deg,#00ff88,#C0F53D,#a3ff7a,#00ff88)] blur-sm opacity-80 group-hover:scale-105 transition-all duration-300" />
+
+        {/* inner button */}
         <button
           onClick={onClick}
-          className={clsx(baseStyles,"bg-[#000] text-[#fafff3] group-hover:bg-[#C0F53D] group-hover:text-[#1a2209] transition-all duration-300", className)}>
+          className={clsx(
+            baseStyles,
+            "relative z-10 bg-[#000] text-[#fafff3] group-hover: transition-all duration-300",
+            className
+          )}
+        >
           {children}
         </button>
       </motion.div>
-        );
-      }
+    );
+  }
 
   return (
     <motion.button

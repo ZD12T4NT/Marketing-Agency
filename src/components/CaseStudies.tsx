@@ -1,5 +1,6 @@
 "use client";
 
+import { instrumentSerif, inter } from "@/lib/fonts";
 import { motion } from "framer-motion";
 import { useState } from "react";
 import SectionIntro from "./SectionIntro";
@@ -60,11 +61,11 @@ export default function CaseStudies() {
 
   return (
     <div className="relative w-full px-6 mt-20 pt-10 md:pt-[10rem]">
-      <SectionIntro
+      <SectionIntro 
         title={
             <>
             We Help <br />
-            Companies <span className="italic font-serif font-light ">Grow</span>
+            Companies <span className={`${instrumentSerif.className} italic`}>Grow</span>
             </>
         }
 
@@ -96,7 +97,7 @@ export default function CaseStudies() {
                     transition={{ type: "spring", stiffness: 200, damping: 20 }}
                     className={`relative h-[350px] rounded-2xl overflow-hidden cursor-pointer border ${
                         isActive
-                        ? "border-lime-400"
+                        ? "border-[#C0F53D]"
                         : "border-[#fafff3]/10"
                     }`}
                     >
@@ -140,7 +141,7 @@ export default function CaseStudies() {
                             <div className="grid grid-cols-2 gap-3 mt-4 text-xs">
                             {item.stats.map((s, i) => (
                                 <div key={i}>
-                                <div className="text-lime-400 font-semibold">
+                                <div className="text-[#C0F53D] font-semibold">
                                     {s.value}
                                 </div>
                                 <div className="text-[#fafff3]/60">{s.label}</div>

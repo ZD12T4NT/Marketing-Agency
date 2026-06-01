@@ -3,7 +3,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import Button from "./Button";
-
+import { instrumentSerif, inter } from "@/lib/fonts";
 
 type HeroProps = {
   title?: string;
@@ -15,7 +15,7 @@ const Hero: React.FC<HeroProps> = () => {
 
       {/* Grid */}
         <div
-        className="absolute inset-0 z-10"
+        className="absolute inset-0 z-10 opacity-40"
         style={{
           backgroundImage: `
             linear-gradient(to right, rgba(255,255,255,0.08) 1px, transparent 1px),
@@ -26,13 +26,24 @@ const Hero: React.FC<HeroProps> = () => {
       />
 
       {/* Glow  */}
-      {/* <div className="absolute z-15 inset-0 pointer-events-none
-        bg-[radial-gradient(circle_at_50%_60%,rgba(163,255,0,0.25),transparent_60%)]"
-      /> */}
+        <motion.div
+        className="absolute bottom-[-280px] -translate-x-1/2 pointer-events-none"
+        style={{
+          width: "1000px",
+          height: "500px",
+          background:
+            "radial-gradient(ellipse at center, rgba(192,245,61,0.45) 0%, rgba(192,245,61,0.15) 50%, transparent 70%)",
+          filter: "blur(100px)",
+        }}
+            animate={{ scale: [1.3, 1.4, 1.3] }}
+          transition={{ duration: 4, repeat: Infinity }}
+      />
+
+     
 
       {/* Subtle particles */}
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-1/3 left-1/4 w-1 h-1 bg-[#fafff3] rounded-full opacity-60" />
+        <div className="absolute top-1/3 left-1/4 w-1 h-1 bg-[#fafff3] rounded-full opacity-4 0" />
         
         <div className="absolute top-1/2 right-1/3 w-1 h-1 bg-[#fafff3] rounded-full opacity-40" />
 
@@ -49,18 +60,18 @@ const Hero: React.FC<HeroProps> = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, ease: "easeOut" }}
-            className="text-[#fafff3] leading-[0.9] tracking-tight mb-7"
+            className="text-[#fafff3] tracking-tight mb-7"
           >
-            <div className="text-5xl md:text-7xl lg:text-8xl font-medium">
+            <div className={`${inter.className}text-5xl md:text-7xl lg:text-8xl font-medium `}>
               Reach
             </div>
 
-            <div className="relative text-5xl md:text-7xl lg:text-8xl italic font-serif font-light ">
+            <div className={`${instrumentSerif.className} relative text-5xl md:text-7xl lg:text-8xl italic font-serif font-light `}>
               New
 
             </div>
 
-            <div className="text-5xl md:text-7xl lg:text-8xl font-medium">
+            <div className={`${inter.className}text-5xl md:text-7xl lg:text-8xl font-medium `}>
               Horizons
             </div>
           </motion.div>
